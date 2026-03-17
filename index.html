@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REFLEX — Reaction Time Tester</title>
+<link rel="stylesheet" href="src/css/styles.css" />
+</head>
+<body>
+
+<div class="shell">
+
+  <header>
+    <div>
+      <div class="logo">RE<em>FLEX</em></div>
+    </div>
+    <div class="best-badge">
+      All-time best<br>
+      <span id="hdr-best">—</span>
+    </div>
+  </header>
+
+  <main>
+
+    <div id="arena" class="state-wait">
+      <div class="arena-label" id="arena-label">CLICK</div>
+      <div class="arena-sub"   id="arena-sub">anywhere to start</div>
+
+      <div id="results-overlay">
+        <div class="final-time" id="r-avg">—</div>
+        <div class="final-unit">ms average</div>
+
+        <div class="verdict" id="r-verdict">—</div>
+
+        <div class="percentile-bar-wrap">
+          <div class="percentile-bar" id="r-pct-bar"></div>
+        </div>
+        <div class="percentile-label">
+          <span>Slower</span>
+          <span>Top <span id="r-pct-txt">—</span></span>
+          <span>Faster</span>
+        </div>
+
+        <div class="result-grid">
+          <div class="rg-cell">
+            <div class="rg-val" id="r-best">—</div>
+            <div class="rg-lbl">Best</div>
+          </div>
+          <div class="rg-cell">
+            <div class="rg-val" id="r-worst">—</div>
+            <div class="rg-lbl">Worst</div>
+          </div>
+          <div class="rg-cell">
+            <div class="rg-val" id="r-consistency">—</div>
+            <div class="rg-lbl">Consist.</div>
+          </div>
+        </div>
+
+        <div class="mini-bars" id="r-bars"></div>
+
+        <div class="action-row">
+          <button class="act-btn primary"   id="btn-play-again">Play Again</button>
+          <button class="act-btn secondary" id="btn-review">Review</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="rounds-row"></div>
+
+    <div id="stats-bar">
+      <div class="stat-cell">
+        <div class="stat-val" id="st-round">1/5</div>
+        <div class="stat-lbl">Round</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-val" id="st-last">—</div>
+        <div class="stat-lbl">Last (ms)</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-val" id="st-avg">—</div>
+        <div class="stat-lbl">Avg (ms)</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-val" id="st-best">—</div>
+        <div class="stat-lbl">Best (ms)</div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div style="font-size:0.6rem; color:var(--dim);">
+      Click arena &nbsp;·&nbsp; <kbd class="kbd">Space</kbd> to respond
+    </div>
+    <button id="reset-btn">Reset</button>
+  </footer>
+
+</div>
+
+<script type="module" src="src/js/main.js"></script>
+
+</body>
+</html>
