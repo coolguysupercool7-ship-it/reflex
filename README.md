@@ -48,17 +48,6 @@ REFLEX is a lightweight, browser-based reaction time tester built with vanilla H
 | Worst | Your slowest single round |
 | Consistency | Difference between best and worst (lower = more consistent) |
 
-### Verdict scale
-
-| Average | Verdict |
-|---|---|
-| < 180ms | Superhuman |
-| 180–210ms | Elite Reflexes |
-| 210–240ms | Above Average |
-| 240–270ms | Average |
-| 270–320ms | Below Average |
-| 320ms+ | Keep Practicing |
-
 ---
 
 ## Getting Started
@@ -73,22 +62,12 @@ REFLEX is a lightweight, browser-based reaction time tester built with vanilla H
 
 2. Open in VS Code and right-click `index.html` → **Open with Live Server**
 
-> ⚠️ The JS files use ES Modules (`import`/`export`) so the project must be served through a local server. Opening `index.html` directly via `file://` will throw a CORS error.
-
-### Test on your phone
-
-With Live Server running, find your local IP address and open it on your phone while on the same WiFi:
-```
-http://192.168.x.x:5500
-```
-
 ---
 
 ## Project Structure
 
 ```
-reflex/
-├── public/                 # Static assets (favicon etc.)
+reflex/               # Static assets (favicon etc.)
 ├── src/
 │   ├── js/
 │   │   ├── main.js         Entry point — wires DOM events to game
@@ -111,22 +90,6 @@ reflex/
 - **`storage.js`** — abstracts localStorage so the rest of the app never calls it directly
 
 ---
-
-## Deployment
-
-This project is deployed via GitHub Pages. To deploy your own fork:
-
-1. Push to GitHub
-2. Go to **Settings → Pages**
-3. Set source to **Deploy from branch → main → / (root)**
-4. Your site will be live at `https://YOUR_USERNAME.github.io/reflex`
-
-To update after changes:
-```bash
-git add .
-git commit -m "your message"
-git push
-```
 
 ---
 
