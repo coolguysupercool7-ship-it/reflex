@@ -1,73 +1,76 @@
-# REFLEX — Reaction Time Tester
-
-> Browser-based reaction time tester. 5 rounds, live stats, percentile ranking, personal best tracking. Built with vanilla HTML, CSS & JS — no frameworks, no build tools.
-
-![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-![License](https://img.shields.io/badge/license-MIT-green?style=flat)
-
----
-
-## Overview
-
-REFLEX is a lightweight, browser-based reaction time tester built with vanilla HTML, CSS, and JavaScript. It measures how fast you can respond to a visual stimulus across 5 rounds and gives you a detailed performance breakdown at the end — including a percentile ranking against average human reaction times.
-
----
+# REFLEX
+A minimal reaction time tester built with vanilla HTML, CSS, and JavaScript. Test how fast your reflexes are across 5 rounds and see how you rank against the average human reaction time.
 
 ## Features
+- **5-Round Test** - Consistent format across every session for fair comparison
+- **Randomised Delays** - Wait time is random between 1.5s and 5s so you can't anticipate the signal
+- **Early Click Detection** - Penalises jumping the gun before the green flash
+- **Live Stats** - See your last, average, and best time update after every round
+- **Results Breakdown** - Percentile ranking, per-round bar chart, and consistency score
+- **Personal Best** - Your all-time best average is saved in the browser across sessions
+- **Keyboard Support** - `Space` bar works alongside mouse clicks
+- **No Dependencies** - Zero frameworks, no npm, no build step required
 
-- 5-round reaction test with randomised delays to prevent anticipation
-- Live stats — last, average, and best time updated after each round
-- Results screen with percentile ranking against the human population average
-- Per-round bar chart showing consistency across the session
-- Personal best saved locally in the browser and persisted across sessions
-- Early click detection — penalises jumping the gun before the signal
-- Keyboard support — `Space` bar works alongside mouse clicks
-- Zero dependencies, no frameworks, no npm, no build step required
-
----
-
-## How It Works
-
-1. Click the arena (or press `Space`) to begin
-2. Wait for the screen to flash **green** — the delay is random between 1.5s and 5s so you can't time it
-3. Click or press `Space` as fast as you can the moment you see green
-4. Click too early and you'll get a penalty — you must wait and retry that round
-5. After 5 rounds you'll see your full results breakdown
-
----
-
-## Results Breakdown
-
-| Metric | Description |
-|---|---|
-| Average | Mean reaction time across all 5 rounds |
-| Percentile | How you rank against the human population average (~250ms) |
-| Best | Your fastest single round |
-| Worst | Your slowest single round |
-| Consistency | Difference between best and worst (lower = more consistent) |
-
----
+## Demo
+Try it live: [REFLEX Demo](https://YOUR_USERNAME.github.io/reflex/)
 
 ## Getting Started
 
-### Run locally
+### Prerequisites
+- VS Code
+- Live Server extension (VS Code → Extensions → search "Live Server")
 
+### Installation
 1. Clone the repo
    ```bash
    git clone https://github.com/YOUR_USERNAME/reflex.git
    cd reflex
    ```
 
-2. Open in VS Code and right-click `index.html` → **Open with Live Server**
+2. Open the folder in VS Code
 
----
+3. Right-click `index.html` → **Open with Live Server**
+
+> ⚠️ The JS files use ES Modules so the project must be served through a local server. Opening `index.html` directly via `file://` will throw a CORS error.
+
+## Usage
+1. **Click the arena** or press `Space` to start a round
+2. **Wait for the green flash** — don't click early or you'll be penalised
+3. **Click as fast as you can** the moment you see it
+4. **Repeat for 5 rounds** — your live stats update after each one
+5. **View your results** — average time, percentile, best, worst, and consistency
+6. **Click "Play Again"** to try and beat your score!
+
+## Built With
+- [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML) - Markup
+- [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS) - Styling with custom properties
+- [Vanilla JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - ES Modules, no frameworks
+- [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) - Personal best persistence
+
+## How It Works
+
+REFLEX measures your **reaction time in milliseconds** from the moment the arena flashes green to the moment you click or press Space.
+
+- **Percentile** — Your average is compared against a human population baseline (~250ms average)
+- **Consistency** — The difference between your best and worst round; lower means more consistent
+- **Early click** — If you click before the signal the round doesn't count and you retry it
+
+### Verdict scale
+
+| Average | Verdict |
+|---|---|
+| < 180ms | Superhuman |
+| 180–210ms | Elite Reflexes |
+| 210–240ms | Above Average |
+| 240–270ms | Average |
+| 270–320ms | Below Average |
+| 320ms+ | Keep Practicing |
 
 ## Project Structure
 
 ```
-reflex/               # Static assets (favicon etc.)
+reflex/
+├── public/                 # Static assets
 ├── src/
 │   ├── js/
 │   │   ├── main.js         Entry point — wires DOM events to game
@@ -81,18 +84,4 @@ reflex/               # Static assets (favicon etc.)
 └── README.md
 ```
 
-### Module responsibilities
-
-- **`main.js`** — boots the app, attaches all event listeners
-- **`game.js`** — owns game state (`idle → ready → go → result → done`), imports from all other modules
-- **`ui.js`** — only touches the DOM, knows nothing about game rules
-- **`utils.js`** — stateless pure functions, fully unit-testable
-- **`storage.js`** — abstracts localStorage so the rest of the app never calls it directly
-
----
-
----
-
-## License
-
-MIT — free to use, modify, and distribute.
+⭐ Star this repo if you found it helpful!
