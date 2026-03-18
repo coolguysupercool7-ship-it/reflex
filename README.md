@@ -12,7 +12,7 @@ A minimal reaction time tester built with vanilla HTML, CSS, and JavaScript. Tes
 - **No Dependencies** - Zero frameworks, no npm, no build step required
 
 ## Demo
-Try it live: [REFLEX Demo](https://YOUR_USERNAME.github.io/reflex/)
+Try it live: [REFLEX Demo]([https://YOUR_USERNAME.github.io/reflex/](https://coolguysupercool7-ship-it.github.io/reflex/))
 
 ## Getting Started
 
@@ -23,7 +23,7 @@ Try it live: [REFLEX Demo](https://YOUR_USERNAME.github.io/reflex/)
 ### Installation
 1. Clone the repo
    ```bash
-   git clone https://github.com/YOUR_USERNAME/reflex.git
+   git clone https://github.com/coolguysupercool7-ship-it/reflex.git
    cd reflex
    ```
 
@@ -84,4 +84,3 @@ reflex/
 └── README.md
 ```
 
-⭐ Star this repo if you found it helpful!
